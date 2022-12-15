@@ -1,0 +1,2 @@
+/opt/homebrew/bin/node /Users/mwallner/Development/Apps/obs-coderscantina/node_modules/.bin/vite build
+/opt/homebrew/bin/node /Users/mwallner/Development/Apps/obs-coderscantina/node_modules/.bin/vite preview & echo $! > run.pid
