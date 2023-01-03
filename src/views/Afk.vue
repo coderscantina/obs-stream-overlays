@@ -1,6 +1,6 @@
 <template>
   <div class="intro">
-    <BigTextBox :header="header" :subheader="subheader" />
+    <BigTextBox :header="header" header-class="text-blur shake" :subheader="subheader" />
   </div>
 </template>
 
