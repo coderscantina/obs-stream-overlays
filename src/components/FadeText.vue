@@ -1,12 +1,14 @@
 <template>
   <div>
-    <span
-      v-for="(l, i) in letters"
-      :key="key(i)"
-      :style="{ 'animation-delay': delay() }"
-      class="animate__animated animate__fadeIn animate__faster"
-      >{{ l }}</span
-    >
+    <div :class="textClass">
+      <span
+        v-for="(l, i) in letters"
+        :key="key(i)"
+        :style="{ 'animation-delay': delay() }"
+        class="animate__animated animate__fadeIn animate__faster"
+        >{{ l }}</span
+      >
+    </div>
   </div>
 </template>
 
@@ -16,6 +18,7 @@ import { computed } from 'vue'
 
 const props = defineProps({
   text: String,
+  textClass: String,
   delay: {
     type: Number,
     default: 500,

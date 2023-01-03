@@ -1,7 +1,7 @@
 <template>
   <div class="big-text-box">
     <FadeText :text="subheader" class="h1 display-1 pb-1" />
-    <FadeText :text="header" class="h1 display-3" :class="headerClass" />
+    <FadeText :text="header" class="h1 display-3" text-class="text-blur-animated" :class="headerClass" />
   </div>
 </template>
 

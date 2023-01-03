@@ -2,10 +2,12 @@
   <div class="intro">
     <Rain />
     <div class="intro-content">
-      <FadeText :text="title" class="h1" />
-      <h1 class="text-left text-blur display-4 animate__animated animate__fadeIn animate__delay-2s">
-        <div class="shake">
-          {{ subtitle }}
+      <FadeText :text="title" class="h1 pb-1" />
+      <h1 class="text-left display-4 animate__animated animate__fadeIn animate__delay-2s">
+        <div class="text-blur-animated">
+          <div class="shake">
+            {{ subtitle }}
+          </div>
         </div>
       </h1>
     </div>

@@ -2,11 +2,13 @@
   <div class="outro">
     <div class="big-text-box">
       <FadeText :text="subheader" class="h1 display-1 pb-1" />
-      <div class="text-blur crack h1 display-3">
-        <div class="opacity-0">{{ header }}</div>
-        <FadeText :text="header" class="before" />
-        <FadeText :text="header" class="middle" />
-        <FadeText :text="header" class="after" />
+      <div class="blink">
+        <div class="text-blur crack h1 display-3">
+          <div class="opacity-0">{{ header }}</div>
+          <FadeText :text="header" class="before" />
+          <FadeText :text="header" class="middle" />
+          <FadeText :text="header" class="after" />
+        </div>
       </div>
     </div>
   </div>
