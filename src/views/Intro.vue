@@ -23,14 +23,20 @@ import Rain from '../components/Rain.vue'
 const start = ref(Date.now())
 const title = 'STREAM BOOTING...'
 const duration = ref(0)
-const subtitle = computed(() => (subtitle.value = duration.value > 0 ? formatSeconds(duration.value / 1000) : 'SOON™'))
+const subtitle = computed(() => {
+  if (duration.value < -5 * 1000) {
+    return 'SOON™'
+  }
+
+  return formatSeconds(Math.max(0, duration.value) / 1000)
+})
 
 fetch('config.json')
   .then((r) => r.json())
   .then(({ start: s }) => (start.value = Date.parse(s)))
 
 const timer = setInterval(() => {
-  duration.value = Math.max(0, start.value - new Date().getTime())
+  duration.value = start.value - new Date().getTime()
 }, 500)
 
 onBeforeUnmount(() => clearInterval(timer))
