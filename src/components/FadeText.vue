@@ -3,7 +3,7 @@
     <div :class="textClass">
       <span
         v-for="(l, i) in letters"
-        :key="key(i)"
+        :key="key(i, l)"
         :style="{ 'animation-delay': delay() }"
         class="animate__animated animate__fadeIn animate__faster"
         >{{ l }}</span
@@ -18,6 +18,7 @@ import { computed } from 'vue'
 
 const props = defineProps({
   text: String,
+  myKey: String,
   textClass: String,
   delay: {
     type: Number,
@@ -26,12 +27,12 @@ const props = defineProps({
 })
 const letters = computed(() => props.text.split(''))
 
-function key(i) {
-  return md5(props.text + i)
+function key(i, l) {
+  return md5(props.myKey + i + l)
 }
 
 function delay() {
-  const d = props.delay + Math.random() * 750
+  const d = props.delay + Math.random() * 500
   return `${d}ms`
 }
 </script>
