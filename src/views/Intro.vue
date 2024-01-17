@@ -1,6 +1,5 @@
 <template>
   <div class="intro">
-    <Rain />
     <div class="intro-content">
       <FadeText :text="title" class="h1 pb-1" />
       <h1 class="text-left display-4 animate__animated animate__fadeIn animate__delay-2s">
@@ -18,7 +17,6 @@
 import { ref, computed, onBeforeUnmount } from 'vue'
 import { formatSeconds } from '../utils/format'
 import FadeText from '../components/FadeText.vue'
-import Rain from '../components/Rain.vue'
 
 const start = ref(Date.now())
 const title = 'STREAM BOOTING...'
